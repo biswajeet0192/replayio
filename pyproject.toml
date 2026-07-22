@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "replayio"
+version = "1.0.0"
+description = "Record and replay backend traffic (HTTP + SQL) with zero code changes."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+keywords = [
+    "replay", "recording", "http", "sql", "debugging", "testing",
+    "observability", "backend", "distributed-systems", "middleware",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: System :: Distributed Computing",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+httpx = ["httpx>=0.24"]
+sqlalchemy = ["sqlalchemy>=2.0"]
+yaml = ["PyYAML>=6.0"]
+all = ["httpx>=0.24", "sqlalchemy>=2.0", "PyYAML>=6.0"]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "httpx>=0.24",
+    "sqlalchemy>=2.0",
+    "PyYAML>=6.0",
+    "flask>=2.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/replayio"
+Repository = "https://github.com/yourname/replayio"
+Issues = "https://github.com/yourname/replayio/issues"
+Documentation = "https://github.com/yourname/replayio#readme"
+
+[project.scripts]
+replayio = "replayio.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+replayio = ["py.typed"]
