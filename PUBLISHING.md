@@ -1,6 +1,6 @@
 # Publishing replayio to PyPI
 
-This is a step-by-step checklist for shipping `replayio` v1.0.0 (and future
+This is a step-by-step checklist for shipping `replayio` v0.1.0 (and future
 versions). It assumes the project layout already in this repo (`src/replayio/`,
 `pyproject.toml`, `README.md`, `LICENSE`).
 
@@ -86,14 +86,14 @@ This produces:
 
 ```
 dist/
-  replayio-1.0.0-py3-none-any.whl
-  replayio-1.0.0.tar.gz
+  replayio-0.1.0-py3-none-any.whl
+  replayio-0.1.0.tar.gz
 ```
 
 Sanity-check the contents before uploading anything:
 
 ```bash
-tar tzf dist/replayio-1.0.0.tar.gz | sort
+tar tzf dist/replayio-0.1.0.tar.gz | sort
 python -m zipfile -l dist/replayio-0.1.0-py3-none-any.whl
 ```
 
@@ -138,15 +138,15 @@ real dependencies — it only hosts your test upload.)
 
 ```bash
 git add pyproject.toml src/replayio/_version.py README.md
-git commit -m "Release v1.0.0"
-git tag -a v1.0.0 -m "replayio v1.0.0"
+git commit -m "Release v0.1.0"
+git tag -a v0.1.0 -m "replayio v0.1.0"
 git push origin main --tags
 ```
 
 If you keep a `CHANGELOG.md`, add an entry like:
 
 ```markdown
-## [1.0.0] - 2026-07-22
+## [0.1.0] - 2026-07-22
 ### Added
 - Initial release: Recorder, Replayer, Comparator
 - requests / httpx / SQLAlchemy adapters
