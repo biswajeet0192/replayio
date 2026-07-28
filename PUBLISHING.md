@@ -94,7 +94,7 @@ Sanity-check the contents before uploading anything:
 
 ```bash
 tar tzf dist/replayio-1.0.0.tar.gz | sort
-python -m zipfile -l dist/replayio-1.0.0-py3-none-any.whl
+python -m zipfile -l dist/replayio-0.1.0-py3-none-any.whl
 ```
 
 You're looking for: `src/replayio/**/*.py`, `LICENSE`, `README.md`, `py.typed`, and
